@@ -9,7 +9,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "rome format . --write"
+    "format": "rome format . --write",
+    "test": "turbo run test --parallel"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
