@@ -1,25 +1,30 @@
 {
-  "name": "utils",
-  "version": "0.0.0",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "format": "rome format . --write",
-    "test": "turbo run test --parallel"
-  },
-  "devDependencies": {
-    "eslint-config-custom": "workspace:*",
-    "rome": "latest",
-    "turbo": "latest"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "dependencies": {},
-  "packageManager": "pnpm@7.14.0"
+	"name": "utils",
+	"version": "0.0.0",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev --parallel",
+		"lint": "turbo run lint",
+		"format": "prettier **/*.{ts,tsx,js,md,json} --write --cache",
+		"test": "turbo run test --parallel"
+	},
+	"devDependencies": {
+		"eslint-config-custom": "workspace:*",
+		"prettier": "latest",
+		"turbo": "latest"
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"dependencies": {},
+	"packageManager": "pnpm@7.16.1",
+	"prettier": {
+		"useTabs": true,
+		"semi": true,
+		"trailingComma": "all"
+	}
 }

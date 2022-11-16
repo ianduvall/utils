@@ -1,26 +1,26 @@
 {
-  "name": "react-resize-observer",
-  "version": "0.0.0",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
-  "scripts": {
-    "build": "tsc",
-    "lint": "tsc --noEmit && eslint ./src/*.ts",
-    "test": "echo \"Error: no test specified\" && exit 0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9",
-    "eslint": "7.32.0",
-    "eslint-config-custom": "workspace:*",
-    "react": "18.2.0",
-    "tsconfig": "workspace:*",
-    "typescript": "4.8.4"
-  },
-  "peerDependencies": {
-    "react": ">=16.8.0"
-  }
+	"name": "react-resize-observer",
+	"version": "0.0.0",
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
+	"scripts": {
+		"build": "tsc",
+		"lint": "tsc --noEmit && eslint ./src/*.ts",
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/react": "18.0.25",
+		"@types/react-dom": "18.0.9",
+		"eslint": "7.32.0",
+		"eslint-config-custom": "workspace:*",
+		"react": "18.2.0",
+		"tsconfig": "workspace:*",
+		"typescript": "4.8.4"
+	},
+	"peerDependencies": {
+		"react": ">=16.8.0"
+	}
 }
