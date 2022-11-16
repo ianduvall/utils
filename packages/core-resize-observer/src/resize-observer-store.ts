@@ -1,42 +1,42 @@
-import { Subscribable } from "subscribable";
-
-type Brand<K, T> = K & { __brand: T };
-const nullishObject = {} as Brand<{}, "nullishObject">;
-
-type CacheKey = typeof nullishObject | Element;
+import { Subscribable, type Callback } from "subscribable";
 
 type Result = ResizeObserverEntry;
-type CacheValue = {
+type CacheKey = Element;
+interface CacheValue {
 	subscriptions: Subscribable;
 	entry: ResizeObserverEntry | undefined;
 	updatedAt: number;
-};
+}
 
-class ResizeObserverStore extends Subscribable {
+export class ResizeObserverStore extends Subscribable {
 	#cache: WeakMap<CacheKey, CacheValue>;
 	#resizeObserver: ResizeObserver;
 
 	constructor() {
 		super();
 		this.#cache = new WeakMap<CacheKey, CacheValue>();
-		const resizeHandler: ResizeObserverCallback = (entries) => {
-			const cache = this.#cache;
-			entries.forEach((entry) => {
-				const result = cache.get(entry.target);
-				if (!result) {
-					throw new Error(
-						`observing an element ${entry.target} with no subscribers`,
-					);
+		this.#resizeObserver = new ResizeObserver(
+			(entries: ResizeObserverEntry[], observer: ResizeObserver): void => {
+				const cache = this.#cache;
+				for (const entry of entries) {
+					const result = cache.get(entry.target);
+					if (!result) {
+						console.error(
+							`observing an element with no subscribers`,
+							entry.target,
+						);
+						observer.unobserve(entry.target);
+						continue;
+					}
+					result.entry = entry;
+					result.subscriptions.notify();
+					result.updatedAt = Date.now();
 				}
-				result.entry = entry;
-				result.subscriptions.notify();
-				result.updatedAt = Date.now();
-			});
-		};
-		this.#resizeObserver = new ResizeObserver(resizeHandler);
+			},
+		);
 	}
 
-	observe<TElement extends Element>(element: TElement, callback: () => void) {
+	observe<TElement extends Element>(element: TElement, callback: Callback) {
 		let result: CacheValue;
 		if (!this.#cache.has(element)) {
 			this.#cache.set(element, {
@@ -48,14 +48,11 @@ class ResizeObserverStore extends Subscribable {
 		result = this.#cache.get(element)!;
 
 		this.#resizeObserver.observe(element);
-		const unobserve = () => {
-			this.#resizeObserver.unobserve(element);
-		};
 
 		const unsubscribe = result.subscriptions.subscribe(callback);
 
 		return () => {
-			unobserve();
+			this.#resizeObserver.unobserve(element);
 			unsubscribe();
 		};
 	}

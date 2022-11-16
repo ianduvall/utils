@@ -1,4 +1,4 @@
-type Callback = () => void;
+export type Callback = () => any;
 
 export class Subscribable {
 	protected subscriptions: Set<Callback>;
