@@ -12,15 +12,15 @@
 		"format": "prettier **/*.{ts,tsx,js,md,json} --write --cache",
 		"test": "turbo run test --parallel"
 	},
+	"engines": {
+		"node": ">=16"
+	},
+	"dependencies": {},
 	"devDependencies": {
 		"eslint-config-custom": "workspace:*",
 		"prettier": "latest",
 		"turbo": "latest"
 	},
-	"engines": {
-		"node": ">=14.0.0"
-	},
-	"dependencies": {},
 	"packageManager": "pnpm@7.16.1",
 	"prettier": {
 		"useTabs": true,
