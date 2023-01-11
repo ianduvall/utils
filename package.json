@@ -3,20 +3,24 @@
 	"version": "0.0.0",
 	"private": true,
 	"workspaces": [
+		"apps/*",
 		"packages/*"
 	],
 	"scripts": {
 		"build": "turbo run build",
 		"dev": "turbo run dev --parallel",
-		"lint": "turbo run lint",
 		"format": "prettier **/*.{ts,tsx,js,md,json} --write --cache",
-		"test": "turbo run test --parallel"
+		"lint": "turbo run lint",
+		"publish-packages": "turbo run build lint test && changeset version && changeset publish",
+		"release": "changeset publish",
+		"test": "turbo run test --parallel",
+		"version": "changeset version"
 	},
 	"engines": {
 		"node": ">=16"
 	},
-	"dependencies": {},
 	"devDependencies": {
+		"@changesets/cli": "^2.26.0",
 		"eslint-config-custom": "workspace:*",
 		"prettier": "latest",
 		"turbo": "latest"

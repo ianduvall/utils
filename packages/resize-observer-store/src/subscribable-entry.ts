@@ -1,4 +1,4 @@
-import { Subscribable, type Callback } from "subscribable";
+import { Subscribable } from "subscribable";
 
 export class SubscribableEntry extends Subscribable {
 	#value: ResizeObserverEntry | undefined;

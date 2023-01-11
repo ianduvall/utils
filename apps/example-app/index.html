@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Core Resize Observer Example</title>
+	</head>
+	<body>
+		<div id="app">
+			<div
+				id="resize-me"
+				style="
+					width: 200px;
+					height: 200px;
+					border: 1px solid black;
+					background: #eee;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				"
+			>
+				target
+			</div>
+
+			<fieldset style="display: flex; gap: 2rem">
+				<legend>Observe</legend>
+				<label>
+					<input type="radio" name="observe" id="observe-on" checked />
+					On
+				</label>
+				<label>
+					<input type="radio" name="observe" id="observe-off" />
+					Off
+				</label>
+			</fieldset>
+			<fieldset>
+				<legend>Width</legend>
+				<input type="number" id="width-input" min="100" max="300" value="200" />
+			</fieldset>
+			<fieldset>
+				<legend>Padding inline</legend>
+				<input type="number" id="padding-input" min="0" max="100" value="0" />
+			</fieldset>
+
+			<div style="display: flex; flex-wrap: wrap">
+				<pre id="content-box"></pre>
+				<pre id="border-box"></pre>
+				<pre id="device-pixel-content-box"></pre>
+			</div>
+		</div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
+</html>

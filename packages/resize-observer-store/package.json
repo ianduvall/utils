@@ -5,15 +5,14 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "tsc",
-		"lint": "tsc --noEmit && eslint ./src/*.ts",
-		"test": "echo \"Error: no test specified\" && exit 0",
-		"publish": "cp package.json dist && cd dist && npm publish"
+		"lint": "tsc --noEmit && eslint",
+		"test": "echo \"Error: no test specified\" && exit 0"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"eslint": "8.31.0",
+		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
 		"subscribable": "workspace:*",
 		"tsconfig": "workspace:*",

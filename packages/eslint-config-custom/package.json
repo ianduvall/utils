@@ -4,8 +4,8 @@
 	"main": "index.js",
 	"license": "MIT",
 	"dependencies": {
-		"eslint": "^8.0.0",
-		"eslint-config-prettier": "^8.0.0",
+		"eslint": "latest",
+		"eslint-config-prettier": "latest",
 		"eslint-plugin-react": "latest",
 		"eslint-config-turbo": "latest"
 	},

@@ -1,5 +1,6 @@
 {
-	"name": "subscribable",
+	"name": "@ianduvall/subscribable",
+	"private": true,
 	"version": "0.0.0",
 	"description": "",
 	"main": "src/index.ts",
@@ -13,7 +14,7 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"eslint": "8.31.0",
+		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
 		"tsconfig": "workspace:*",
 		"typescript": "4.9.4"

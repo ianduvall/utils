@@ -5,16 +5,16 @@
 	"types": "./src/index.ts",
 	"scripts": {
 		"build": "tsc",
-		"lint": "tsc --noEmit && eslint ./src/*.ts",
+		"lint": "tsc --noEmit && eslint",
 		"test": "echo \"Error: no test specified\" && exit 0"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@types/react": "18.0.25",
-		"@types/react-dom": "18.0.9",
-		"eslint": "7.32.0",
+		"@types/react": "latest",
+		"@types/react-dom": "latest",
+		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
 		"react": "18.2.0",
 		"tsconfig": "workspace:*",
