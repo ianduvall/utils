@@ -1,6 +1,6 @@
 {
 	"name": "@ianduvall/resize-observer-store",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"scripts": {
@@ -11,10 +11,12 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"dependencies": {
+		"@ianduvall/subscribable": "workspace:*"
+	},
 	"devDependencies": {
 		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
-		"subscribable": "workspace:*",
 		"tsconfig": "workspace:*",
 		"typescript": "4.9.4"
 	}

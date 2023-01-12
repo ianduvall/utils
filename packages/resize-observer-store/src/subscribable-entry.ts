@@ -1,4 +1,4 @@
-import { Subscribable } from "subscribable";
+import { Subscribable } from "@ianduvall/subscribable";
 
 export class SubscribableEntry extends Subscribable {
 	#value: ResizeObserverEntry | undefined;

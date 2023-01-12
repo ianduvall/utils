@@ -1,7 +1,5 @@
 import { BoxOptionResizeObserver } from "./box-option-resize-observer";
-import type { BoxOption } from "./types";
-
-type Callback = () => unknown;
+import type { BoxOption, Callback } from "./types";
 
 export class ResizeObserverStore {
 	#cache: Map<BoxOption, BoxOptionResizeObserver>;

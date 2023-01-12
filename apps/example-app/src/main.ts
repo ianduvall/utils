@@ -1,6 +1,11 @@
 import { ResizeObserverStore } from "@ianduvall/resize-observer-store";
 
 const roStore = new ResizeObserverStore();
+declare global {
+	interface Window {
+		roStore: ResizeObserverStore;
+	}
+}
 window.roStore = roStore;
 
 const ro = new ResizeObserver(() => {});
@@ -31,12 +36,12 @@ observeOffInput.addEventListener("click", () => {
 	roUnsubscribe();
 });
 widthInput.addEventListener("change", (e) => {
-	const value = e.target?.value;
-	target.style.width = `${value}px`;
+	const element = e.target as HTMLInputElement;
+	target.style.width = `${element.value}px`;
 });
 paddingInput.addEventListener("change", (e) => {
-	const value = e.target?.value;
-	target.style.paddingInline = `${value}px`;
+	const element = e.target as HTMLInputElement;
+	target.style.paddingInline = `${element.value}px`;
 });
 
 const testNative = () => {
@@ -79,8 +84,13 @@ const testNative = () => {
 	ro.observe(target, { box: "border-box" });
 };
 // testNative();
+testNative;
 
-function subscribe(el: Element, showElement: Element, boxOption) {
+function subscribe(
+	el: Element,
+	showElement: Element,
+	boxOption: ResizeObserverBoxOptions,
+) {
 	roStore.observe(
 		el,
 		() => {
