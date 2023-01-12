@@ -24,7 +24,7 @@ export class ResizeObserverStore {
 	observe(
 		element: Element,
 		callback: Callback,
-		boxOption: BoxOption = "border-box" as const,
+		boxOption: BoxOption = "content-box" as const,
 	) {
 		console.log("observe", boxOption);
 		const cacheValue = this.#load(boxOption);
@@ -34,11 +34,10 @@ export class ResizeObserverStore {
 	unobserve(
 		element: Element,
 		callback: Callback,
-		boxOption: BoxOption = "border-box" as const,
+		boxOption: BoxOption = "content-box" as const,
 	): void {
-		console.log("unobserve", boxOption);
 		const cache = this.#cache;
-		let cacheValue = cache.get(boxOption);
+		const cacheValue = cache.get(boxOption);
 		if (!cacheValue) {
 			return;
 		}
@@ -52,7 +51,7 @@ export class ResizeObserverStore {
 
 	getSnapshot(
 		element: Element,
-		boxOption: BoxOption,
+		boxOption: BoxOption = "content-box" as const,
 	): ResizeObserverEntry | undefined {
 		return this.#cache.get(boxOption)?.get(element)?.value;
 	}

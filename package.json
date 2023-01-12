@@ -2,10 +2,6 @@
 	"name": "utils",
 	"version": "0.0.0",
 	"private": true,
-	"workspaces": [
-		"apps/*",
-		"packages/*"
-	],
 	"scripts": {
 		"build": "turbo run build",
 		"dev": "turbo run dev --parallel",
@@ -14,6 +10,7 @@
 		"publish-packages": "turbo run build lint test && changeset version && changeset publish",
 		"release": "changeset publish",
 		"test": "turbo run test --parallel",
+		"use-resize-observer": "pnpm --filter @ianduvall/react-use-resize-observer",
 		"version": "changeset version"
 	},
 	"engines": {
