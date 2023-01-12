@@ -10,8 +10,10 @@
 		"publish-packages": "turbo run build lint test && changeset version && changeset publish",
 		"release": "changeset publish",
 		"test": "turbo run test --parallel",
-		"use-resize-observer": "pnpm --filter @ianduvall/react-use-resize-observer",
-		"version": "changeset version"
+		"version": "changeset version",
+		"w:react-app": "pnpm --filter react-app",
+		"w:react-use-resize-observer": "pnpm --filter @ianduvall/react-use-resize-observer",
+		"w:use-resize-observer": "pnpm --filter @ianduvall/react-use-resize-observer"
 	},
 	"engines": {
 		"node": ">=16"

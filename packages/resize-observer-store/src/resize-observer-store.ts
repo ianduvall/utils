@@ -26,7 +26,6 @@ export class ResizeObserverStore {
 		callback: Callback,
 		boxOption: BoxOption = "content-box" as const,
 	) {
-		console.log("observe", boxOption);
 		const cacheValue = this.#load(boxOption);
 		cacheValue.observe(element, callback);
 	}
