@@ -1,4 +1,4 @@
-import { useResizeObserver } from "@ianduvall/react-use-resize-observer";
+import { useResizeObserver } from "@ianduvall/react-resize-observer-store";
 import "./App.css";
 
 const selector = (entry: ResizeObserverEntry | undefined) => {

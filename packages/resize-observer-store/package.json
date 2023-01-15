@@ -1,23 +1,27 @@
 {
+	"$schema": "https://json.schemastore.org/package",
 	"name": "@ianduvall/resize-observer-store",
-	"version": "0.0.3",
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"author": "Ian Duvall",
+	"license": "MIT",
+	"version": "0.0.4",
+	"keywords": [],
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsup",
+		"dev": "pnpm build --watch",
 		"lint": "tsc --noEmit && eslint",
 		"test": "echo \"Error: no test specified\" && exit 0"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
 	"dependencies": {
 		"@ianduvall/subscribable": "workspace:*"
 	},
 	"devDependencies": {
-		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
+		"eslint": "latest",
 		"tsconfig": "workspace:*",
-		"typescript": "4.9.4"
+		"tsup": "^6.5.0",
+		"typescript": "^4.9.4"
 	}
 }

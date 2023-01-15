@@ -1,5 +1,11 @@
 # @ianduvall/resize-observer-store
 
+## 0.0.4
+
+### Patch Changes
+
+- Use tsup
+
 ## 0.0.3
 
 ### Patch Changes

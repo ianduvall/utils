@@ -1,5 +1,5 @@
 import { ResizeObserverStore } from "@ianduvall/resize-observer-store";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState, PropsWithChildren } from "react";
 import { useSyncExternalStoreWithSelector } from "use-sync-external-store/with-selector";
 
 // lazily initialize ResizeObserverStore singleton

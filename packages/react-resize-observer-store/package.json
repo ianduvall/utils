@@ -1,16 +1,18 @@
 {
-	"name": "@ianduvall/react-use-resize-observer",
-	"version": "0.0.1",
-	"main": "./src/index.ts",
-	"types": "./src/index.ts",
+	"name": "@ianduvall/react-resize-observer-store",
+	"author": "Ian Duvall",
+	"license": "MIT",
+	"version": "0.0.2",
+	"keywords": [],
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsup",
+		"dev": "pnpm build --watch",
 		"lint": "tsc --noEmit && eslint",
 		"test": "echo \"Error: no test specified\" && exit 0"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
 	"dependencies": {
 		"@ianduvall/resize-observer-store": "workspace:*",
 		"@types/use-sync-external-store": "^0.0.3",
@@ -22,9 +24,10 @@
 		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
 		"eslint-plugin-react-hooks": "latest",
-		"react": "18.2.0",
+		"react": "^18.0.0",
 		"tsconfig": "workspace:*",
-		"typescript": "4.9.4"
+		"tsup": "^6.5.0",
+		"typescript": "^4.9.4"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0"

@@ -1,7 +1,7 @@
 {
 	"name": "react-app",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -9,7 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@ianduvall/react-use-resize-observer": "workspace:*",
+		"@ianduvall/react-resize-observer-store": "workspace:*",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},

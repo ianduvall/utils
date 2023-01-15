@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"build": "turbo run build",
+		"change": "changeset",
 		"dev": "turbo run dev --parallel",
 		"format": "prettier **/*.{ts,tsx,js,md,json} --write --cache",
 		"lint": "turbo run lint",
@@ -12,19 +13,19 @@
 		"test": "turbo run test --parallel",
 		"version": "changeset version",
 		"w:react-app": "pnpm --filter react-app",
-		"w:react-use-resize-observer": "pnpm --filter @ianduvall/react-use-resize-observer",
-		"w:use-resize-observer": "pnpm --filter @ianduvall/react-use-resize-observer"
+		"w:react-resize-observer-store": "pnpm --filter @ianduvall/react-resize-observer-store",
+		"w:resize-observer-store": "pnpm --filter @ianduvall/resize-observer-store"
 	},
 	"engines": {
 		"node": ">=16"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.26.0",
+		"@changesets/cli": "2.26.0",
 		"eslint-config-custom": "workspace:*",
 		"prettier": "latest",
 		"turbo": "latest"
 	},
-	"packageManager": "pnpm@7.24.3",
+	"packageManager": "pnpm@7.25.0",
 	"prettier": {
 		"useTabs": true,
 		"semi": true,
