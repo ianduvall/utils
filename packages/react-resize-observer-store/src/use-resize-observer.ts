@@ -1,15 +1,6 @@
-import { ResizeObserverStore } from "@ianduvall/resize-observer-store";
-import { useCallback, useMemo, useState, PropsWithChildren } from "react";
+import { getResizeObserverStore } from "@ianduvall/resize-observer-store";
+import { useCallback, useMemo, useState } from "react";
 import { useSyncExternalStoreWithSelector } from "use-sync-external-store/with-selector";
-
-// lazily initialize ResizeObserverStore singleton
-let store: ResizeObserverStore | undefined;
-const getResizeObserverStore = () => {
-	if (!store) {
-		store = new ResizeObserverStore();
-	}
-	return store;
-};
 
 type BoxOption = "border-box" | "content-box" | "device-pixel-content-box";
 
@@ -32,16 +23,19 @@ export const useResizeObserver = <Selection = ResizeObserverEntry | undefined>({
 	const subscribe = useCallback(
 		(onStoreChanged: () => void) => {
 			if (!element) {
-				return function elementIsNull() {
+				const elementIsNull = () => {
 					return;
 				};
+				return elementIsNull;
 			}
+
 			const store = getResizeObserverStore();
 			store.observe(element, onStoreChanged, box);
 
-			return function unsubscribe() {
+			const unsubscribe = () => {
 				store.unobserve(element, onStoreChanged, box);
 			};
+			return unsubscribe;
 		},
 		[element, box],
 	);

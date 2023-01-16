@@ -3,11 +3,18 @@
 	"name": "@ianduvall/resize-observer-store",
 	"author": "Ian Duvall",
 	"license": "MIT",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"keywords": [],
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/index.js",
+			"import": "./dist/index.mjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
 	"scripts": {
 		"build": "tsup",
 		"dev": "pnpm build --watch",
@@ -15,6 +22,7 @@
 		"test": "echo \"Error: no test specified\" && exit 0"
 	},
 	"dependencies": {
+		"@ianduvall/lazily": "workspace:*",
 		"@ianduvall/subscribable": "workspace:*"
 	},
 	"devDependencies": {

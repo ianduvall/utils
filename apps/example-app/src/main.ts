@@ -1,14 +1,16 @@
-import { ResizeObserverStore } from "@ianduvall/resize-observer-store";
+import { getResizeObserverStore } from "@ianduvall/resize-observer-store";
 
-const roStore = new ResizeObserverStore();
+const roStore = getResizeObserverStore();
 declare global {
 	interface Window {
-		roStore: ResizeObserverStore;
+		roStore: typeof roStore;
 	}
 }
 window.roStore = roStore;
 
-const ro = new ResizeObserver(() => {});
+const ro = new ResizeObserver(() => {
+	return;
+});
 ro.disconnect();
 ro.disconnect();
 
@@ -95,7 +97,10 @@ function subscribe(
 		el,
 		() => {
 			console.log("notify", boxOption);
-			const entry = roStore.getSnapshot(el, boxOption)!;
+			const entry = roStore.getSnapshot(el, boxOption);
+			if (!entry) {
+				return;
+			}
 			const getBoxSize = (boxSize: ResizeObserverSize) => {
 				return {
 					blockSize: boxSize.blockSize,

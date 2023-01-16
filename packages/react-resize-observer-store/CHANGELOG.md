@@ -1,5 +1,13 @@
 # @ianduvall/react-resize-observer-store
 
+## 0.0.3
+
+### Patch Changes
+
+- 9577504: Lazily create store singleton
+- Updated dependencies [9577504]
+  - @ianduvall/resize-observer-store@0.0.5
+
 ## 0.0.2
 
 ### Patch Changes

@@ -1,35 +1,32 @@
 {
-	"name": "@ianduvall/react-resize-observer-store",
+	"$schema": "https://json.schemastore.org/package",
+	"name": "@ianduvall/lazily",
 	"author": "Ian Duvall",
 	"license": "MIT",
-	"version": "0.0.3",
+	"version": "0.0.0",
 	"keywords": [],
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/index.js",
+			"import": "./dist/index.mjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
 	"scripts": {
 		"build": "tsup",
 		"dev": "pnpm build --watch",
 		"lint": "tsc --noEmit && eslint",
 		"test": "echo \"Error: no test specified\" && exit 0"
 	},
-	"dependencies": {
-		"@ianduvall/resize-observer-store": "workspace:*",
-		"@types/use-sync-external-store": "^0.0.3",
-		"use-sync-external-store": "^1.0.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
-		"@types/react": "latest",
-		"@types/react-dom": "latest",
-		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
-		"eslint-plugin-react-hooks": "latest",
-		"react": "^18.0.0",
+		"eslint": "latest",
 		"tsconfig": "workspace:*",
 		"tsup": "^6.5.0",
 		"typescript": "^4.9.4"
-	},
-	"peerDependencies": {
-		"react": ">=16.8.0"
 	}
 }
