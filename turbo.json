@@ -6,8 +6,7 @@
 			"outputs": ["dist/**"]
 		},
 		"dev": {
-			"cache": false,
-			"persistent": false
+			"cache": false
 		},
 		"lint": {
 			"outputs": []

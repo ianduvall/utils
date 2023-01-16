@@ -12,7 +12,7 @@
 		"release": "changeset publish",
 		"test": "turbo run test --parallel",
 		"version": "changeset version",
-		"w:react-app": "pnpm --filter react-app",
+		"w:react-app": "pnpm --filter=...react-app",
 		"w:react-resize-observer-store": "pnpm --filter @ianduvall/react-resize-observer-store",
 		"w:resize-observer-store": "pnpm --filter @ianduvall/resize-observer-store"
 	},

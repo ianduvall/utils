@@ -1,5 +1,5 @@
 import { BoxOptionResizeObserver } from "./box-option-resize-observer";
-import type { BoxOption, Callback } from "./types";
+import type { BoxOption, Callback, Entry } from "./types";
 
 export class ResizeObserverStore {
 	#cache: Map<BoxOption, BoxOptionResizeObserver>;
@@ -25,7 +25,7 @@ export class ResizeObserverStore {
 		element: Element,
 		callback: Callback,
 		boxOption: BoxOption = "content-box" as const,
-	) {
+	): void {
 		const cacheValue = this.#load(boxOption);
 		cacheValue.observe(element, callback);
 	}
@@ -48,10 +48,10 @@ export class ResizeObserverStore {
 		this.#cache.clear();
 	}
 
-	getSnapshot(
-		element: Element,
+	getSnapshot<Elem extends Element>(
+		element: Elem,
 		boxOption: BoxOption = "content-box" as const,
-	): ResizeObserverEntry | undefined {
-		return this.#cache.get(boxOption)?.get(element)?.value;
+	): Entry<Elem> | undefined {
+		return this.#cache.get(boxOption)?.get<Elem>(element)?.value;
 	}
 }

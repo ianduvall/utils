@@ -1,7 +1,8 @@
 import { Subscribable } from "@ianduvall/subscribable";
+import type { Entry } from "./types";
 
-export class SubscribableEntry extends Subscribable {
-	#value: ResizeObserverEntry | undefined;
+export class SubscribableEntry<Elem extends Element> extends Subscribable {
+	#value: Entry<Elem> | undefined;
 
 	constructor() {
 		super();
@@ -11,7 +12,7 @@ export class SubscribableEntry extends Subscribable {
 		return this.#value;
 	}
 
-	set value(next: ResizeObserverEntry | undefined) {
+	set value(next: Entry<Elem> | undefined) {
 		this.#value = next;
 		this.notify();
 	}

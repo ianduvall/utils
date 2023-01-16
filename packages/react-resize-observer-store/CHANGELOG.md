@@ -1,5 +1,13 @@
 # @ianduvall/react-resize-observer-store
 
+## 0.0.4
+
+### Patch Changes
+
+- Add generic types, wrap selector and isEqual to remove undefined checks
+- Updated dependencies
+  - @ianduvall/resize-observer-store@0.0.6
+
 ## 0.0.3
 
 ### Patch Changes

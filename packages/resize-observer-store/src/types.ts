@@ -4,3 +4,8 @@ export type BoxOption =
 	| "device-pixel-content-box";
 
 export type Callback = () => unknown;
+
+export interface Entry<Elem extends Element = Element>
+	extends ResizeObserverEntry {
+	target: Elem;
+}

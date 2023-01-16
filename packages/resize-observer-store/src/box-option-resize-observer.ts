@@ -3,7 +3,7 @@ import type { BoxOption, Callback } from "./types";
 
 export class BoxOptionResizeObserver {
 	#boxOption: BoxOption;
-	#entryCache: WeakMap<Element, SubscribableEntry>;
+	#entryCache: WeakMap<Element, SubscribableEntry<Element>>;
 	#resizeObserver: ResizeObserver;
 
 	constructor(boxOption: ResizeObserverBoxOptions) {
@@ -60,10 +60,15 @@ export class BoxOptionResizeObserver {
 	has(element: Element): boolean {
 		return this.#entryCache.has(element);
 	}
-	get(element: Element): SubscribableEntry | undefined {
-		return this.#entryCache.get(element);
+	get<Elem extends Element>(
+		element: Elem,
+	): SubscribableEntry<Elem> | undefined {
+		return this.#entryCache.get(element) as SubscribableEntry<Elem> | undefined;
 	}
-	set(element: Element, value: SubscribableEntry): this {
+	set<Elem extends Element>(
+		element: Elem,
+		value: SubscribableEntry<Elem>,
+	): this {
 		this.#entryCache.set(element, value);
 		return this;
 	}

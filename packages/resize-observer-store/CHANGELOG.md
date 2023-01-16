@@ -1,5 +1,11 @@
 # @ianduvall/resize-observer-store
 
+## 0.0.6
+
+### Patch Changes
+
+- Add generic types, wrap selector and isEqual to remove undefined checks
+
 ## 0.0.5
 
 ### Patch Changes
