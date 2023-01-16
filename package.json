@@ -5,6 +5,7 @@
 	"scripts": {
 		"build": "turbo run build",
 		"change": "changeset",
+		"clean": "turbo run clean",
 		"dev": "turbo run dev --parallel",
 		"format": "prettier **/*.{ts,tsx,js,md,json} --write --cache",
 		"lint": "turbo run lint",

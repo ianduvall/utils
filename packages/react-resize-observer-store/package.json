@@ -11,7 +11,7 @@
 		"build": "tsup",
 		"dev": "pnpm build --watch",
 		"lint": "tsc --noEmit && eslint",
-		"test": "echo \"Error: no test specified\" && exit 0"
+		"test": "echo 'No tests specified' && exit 0"
 	},
 	"dependencies": {
 		"@ianduvall/resize-observer-store": "workspace:*",
