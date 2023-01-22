@@ -4,6 +4,13 @@
 
 ### Patch Changes
 
+- Updated dependencies [97d348f]
+  - @ianduvall/resize-observer-store@0.0.8
+
+## null
+
+### Patch Changes
+
 - Updated dependencies
   - @ianduvall/resize-observer-store@0.0.7
 

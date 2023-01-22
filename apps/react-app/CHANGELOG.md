@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- @ianduvall/react-resize-observer-store@0.0.6
+
+## null
+
+### Patch Changes
+
 - Updated dependencies
   - @ianduvall/react-resize-observer-store@0.0.5
 

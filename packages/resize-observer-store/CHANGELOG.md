@@ -1,5 +1,11 @@
 # @ianduvall/resize-observer-store
 
+## 0.0.8
+
+### Patch Changes
+
+- 97d348f: Use lazily
+
 ## 0.0.7
 
 ### Patch Changes
