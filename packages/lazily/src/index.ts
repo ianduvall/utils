@@ -1,11 +1,22 @@
-export const lazily = <Output>(create: () => Output): (() => Output) => {
+export const lazily = <Output>(
+	create: () => Output,
+): {
+	(): Output;
+	clear(): void;
+} => {
 	let value: Output | undefined;
 
-	return function factory(): Output {
+	const factory = (): Output => {
 		if (value === undefined) {
 			value = create();
 		}
 
 		return value;
 	};
+
+	factory.clear = (): void => {
+		value = undefined;
+	};
+
+	return factory;
 };

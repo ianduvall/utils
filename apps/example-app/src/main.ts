@@ -1,18 +1,8 @@
-import { getResizeObserverStore } from "@ianduvall/resize-observer-store";
-
-const roStore = getResizeObserverStore();
-declare global {
-	interface Window {
-		roStore: typeof roStore;
-	}
-}
-window.roStore = roStore;
-
-const ro = new ResizeObserver(() => {
-	return;
-});
-ro.disconnect();
-ro.disconnect();
+import {
+	disconnect,
+	observe,
+	snapshot,
+} from "@ianduvall/resize-observer-store";
 
 const target = document.querySelector("#resize-me") as HTMLTextAreaElement;
 const observeOnInput = document.querySelector(
@@ -93,11 +83,11 @@ function subscribe(
 	showElement: Element,
 	boxOption: ResizeObserverBoxOptions,
 ) {
-	roStore.observe(
+	observe(
 		el,
 		() => {
 			console.log("notify", boxOption);
-			const entry = roStore.getSnapshot(el, boxOption);
+			const entry = snapshot(el, boxOption);
 			if (!entry) {
 				return;
 			}
@@ -137,5 +127,5 @@ function roSubscribe() {
 roSubscribe();
 
 function roUnsubscribe() {
-	roStore.disconnect();
+	disconnect();
 }

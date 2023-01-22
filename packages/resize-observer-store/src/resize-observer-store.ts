@@ -48,7 +48,7 @@ export class ResizeObserverStore {
 		this.#cache.clear();
 	}
 
-	getSnapshot<Elem extends Element>(
+	snapshot<Elem extends Element>(
 		element: Elem,
 		boxOption: BoxOption = "content-box" as const,
 	): Entry<Elem> | undefined {

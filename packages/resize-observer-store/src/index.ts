@@ -1,12 +1,20 @@
 import { ResizeObserverStore } from "./resize-observer-store";
-import { lazily } from "@ianduvall/lazily";
 
 export * from "./types";
 
 /**
- * Returns the singleton instance of the ResizeObserverStore.
- * @returns ResizeObserverStore
+ * Singleton instance of the ResizeObserverStore.
  */
-export const getResizeObserverStore = lazily<ResizeObserverStore>(
-	() => new ResizeObserverStore(),
-);
+const store = new ResizeObserverStore();
+
+export const observe: ResizeObserverStore["observe"] =
+	store.observe.bind(store);
+
+export const unobserve: ResizeObserverStore["unobserve"] =
+	store.unobserve.bind(store);
+
+export const disconnect: ResizeObserverStore["disconnect"] =
+	store.disconnect.bind(store);
+
+export const snapshot: ResizeObserverStore["snapshot"] =
+	store.snapshot.bind(store);

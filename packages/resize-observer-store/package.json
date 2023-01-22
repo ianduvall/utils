@@ -3,7 +3,7 @@
 	"name": "@ianduvall/resize-observer-store",
 	"author": "Ian Duvall",
 	"license": "MIT",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"keywords": [],
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",

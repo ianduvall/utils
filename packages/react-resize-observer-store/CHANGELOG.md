@@ -1,5 +1,13 @@
 # @ianduvall/react-resize-observer-store
 
+## 0.0.5
+
+### Patch Changes
+
+- Refactor resize-observer-store to export functions instead of store instance
+- Updated dependencies
+  - @ianduvall/resize-observer-store@0.0.7
+
 ## 0.0.4
 
 ### Patch Changes
