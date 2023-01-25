@@ -1,10 +1,9 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"name": "@ianduvall/interceptable",
-	"private": true,
 	"author": "Ian Duvall",
 	"license": "MIT",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"keywords": [],
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",

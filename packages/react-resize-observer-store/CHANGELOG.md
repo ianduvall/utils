@@ -1,5 +1,13 @@
 # @ianduvall/react-resize-observer-store
 
+## 0.0.7
+
+### Patch Changes
+
+- Publish interceptable
+- Updated dependencies
+  - @ianduvall/resize-observer-store@0.0.9
+
 ## 0.0.6
 
 ### Patch Changes

@@ -1,8 +1,4 @@
-import {
-	disconnect,
-	observe,
-	snapshot,
-} from "@ianduvall/resize-observer-store";
+import { getResizeObserverStore } from "@ianduvall/resize-observer-store";
 
 const target = document.querySelector("#resize-me") as HTMLTextAreaElement;
 const observeOnInput = document.querySelector(
@@ -83,11 +79,11 @@ function subscribe(
 	showElement: Element,
 	boxOption: ResizeObserverBoxOptions,
 ) {
-	observe(
+	getResizeObserverStore().observe(
 		el,
 		() => {
 			console.log("notify", boxOption);
-			const entry = snapshot(el, boxOption);
+			const entry = getResizeObserverStore().snapshot(el, boxOption);
 			if (!entry) {
 				return;
 			}
@@ -127,5 +123,5 @@ function roSubscribe() {
 roSubscribe();
 
 function roUnsubscribe() {
-	disconnect();
+	getResizeObserverStore().disconnect();
 }

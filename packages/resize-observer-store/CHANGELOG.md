@@ -1,5 +1,11 @@
 # @ianduvall/resize-observer-store
 
+## 0.0.9
+
+### Patch Changes
+
+- Publish interceptable
+
 ## 0.0.8
 
 ### Patch Changes

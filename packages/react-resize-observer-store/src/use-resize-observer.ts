@@ -1,9 +1,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { useSyncExternalStoreWithSelector } from "use-sync-external-store/with-selector";
 import {
-	snapshot,
-	observe,
-	unobserve,
+	getResizeObserverStore,
 	type Entry,
 	type BoxOption,
 } from "@ianduvall/resize-observer-store";
@@ -39,10 +37,10 @@ export const useResizeObserver = <
 				return elementIsNull;
 			}
 
-			observe(element, onStoreChanged, box);
+			getResizeObserverStore().observe(element, onStoreChanged, box);
 
 			const unsubscribe = () => {
-				unobserve(element, onStoreChanged, box);
+				getResizeObserverStore().unobserve(element, onStoreChanged, box);
 			};
 			return unsubscribe;
 		},
@@ -54,7 +52,7 @@ export const useResizeObserver = <
 			return;
 		}
 
-		return snapshot(element, box);
+		return getResizeObserverStore().snapshot(element, box);
 	}, [box, element]);
 
 	/**
