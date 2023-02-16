@@ -1,5 +1,13 @@
 # @ianduvall/resize-observer-store
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies
+  - @ianduvall/subscribable@0.0.2
+  - @ianduvall/lazily@0.0.2
+
 ## 0.0.9
 
 ### Patch Changes

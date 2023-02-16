@@ -2,7 +2,7 @@
 	"name": "@ianduvall/react-resize-observer-store",
 	"author": "Ian Duvall",
 	"license": "MIT",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"keywords": [],
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
