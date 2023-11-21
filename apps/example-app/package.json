@@ -12,7 +12,7 @@
 		"@ianduvall/resize-observer-store": "workspace:*"
 	},
 	"devDependencies": {
-		"typescript": "^4.0.0",
+		"typescript": "*",
 		"vite": "^4.0.0"
 	}
 }

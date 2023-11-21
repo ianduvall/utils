@@ -13,6 +13,10 @@ export class SubscribableEntry<Elem extends Element> extends Subscribable {
 	}
 
 	set value(next: Entry<Elem> | undefined) {
+		if (Object.is(this.#value, next)) {
+			return;
+		}
+
 		this.#value = next;
 		this.notify();
 	}

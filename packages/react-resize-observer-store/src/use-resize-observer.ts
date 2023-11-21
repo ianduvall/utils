@@ -77,7 +77,7 @@ export const useResizeObserver = <
 		}
 		return (a: Selection | undefined, b: Selection | undefined) => {
 			if (a === undefined || b === undefined) {
-				return a === b;
+				return Object.is(a, b);
 			}
 			return isEqual(a, b);
 		};

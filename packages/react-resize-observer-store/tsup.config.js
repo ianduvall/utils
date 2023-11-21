@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-	name: "resize-observer-store",
+	name: "react-resize-observer-store",
 
 	clean: true,
 	dts: true,

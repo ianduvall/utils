@@ -28,7 +28,7 @@ describe("Interceptable", () => {
 				// add one
 				(next) => (input) => next(input + 1),
 				// double if even
-				(next) => (input) => input % 2 === 0 ? next(input * 2) : input,
+				(next) => (input) => (input % 2 === 0 ? next(input * 2) : input),
 			]),
 		});
 

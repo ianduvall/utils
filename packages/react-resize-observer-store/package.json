@@ -27,14 +27,14 @@
 	"devDependencies": {
 		"@types/react": "latest",
 		"@types/react-dom": "latest",
-		"@types/use-sync-external-store": "^0.0.3",
+		"@types/use-sync-external-store": "^0.0.6",
 		"eslint": "latest",
 		"eslint-config-custom": "workspace:*",
 		"eslint-plugin-react-hooks": "latest",
 		"react": "^18.0.0",
 		"tsconfig": "workspace:*",
-		"tsup": "^6.5.0",
-		"typescript": "^4.9.4"
+		"tsup": "*",
+		"typescript": "*"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0"
